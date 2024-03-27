@@ -1,0 +1,39 @@
+CREATE DATABASE university;
+CREATE TABLE student (
+ID BIGINT PRIMARY KEY,
+name VARCHAR(255),
+birthday DATE,
+group_id INT
+);
+
+ CREATE TABLE Subject (
+ id BIGINT PRIMARY KEY,
+ name VARCHAR(255),
+ description VARCHAR(255),
+ grade INT
+ );
+ CREATE TABLE Payment (
+ id BIGINT PRIMARY KEY,
+ type_id BIGINT,
+ amount DECIMAL(10,3),
+ student_id BIGINT,
+ payment_date DATE
+ );
+CREATE TABLE PaymentType (
+id BIGINT PRIMARY KEY,
+name VARCHAR(255)
+);
+ CREATE TABLE Mark (
+ BIGINT PRIMARY KEY,
+ student_id BIGINT,
+ subject_id BIGINT,
+ mark INT,
+ FOREIGN KEY (student_id) REFERENCES Student(id),
+ FOREIGN KEY (subject_id) REFERENCES Subject(id)
+  );
+
+
+
+
+
+
