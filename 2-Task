@@ -1,0 +1,67 @@
+1. INSERT INTO student (id, name, group_id)
+VALUES 
+(1, 'John', 1),
+(2, 'Chris', 1),
+(3, 'Carl', 1),
+(4, 'Oliver', 2),
+(5, 'James', 2),
+(6, 'Lucas', 2),
+(7, 'Henry', 2),
+(8, 'Jacob', 3),
+(9, 'Logan', 3),
+(10, 'Emily', 4),
+(11, 'Sophia', 4),
+(12, 'Emma', 5),
+(13, 'Liam', 5);
+
+
+2. INSERT INTO subject (id, name, grade)
+VALUES 
+(1, 'Art', 1),
+(2, 'Music', 1),
+(3, 'Geography', 2),
+(4, 'History', 2),
+(5, 'PE', 3),
+(6, 'Math', 3),
+(7, 'Science', 4),
+(8, 'IT', 4),
+(9, 'English', 5),
+(10, 'Physics', 5);
+
+
+3. INSERT INTO PaymentType (id, name)
+VALUES (1, 'DAILY'),
+(2, 'WEEKLY'),
+(3, 'MONTHLY');
+
+
+4. INSERT INTO Payments (student_id, type_id) 
+VALUES (
+    (SELECT student_id FROM Students WHERE name = 'John' LIMIT 1),
+    (SELECT type_id FROM PaymentTypes WHERE name = 'WEEKLY' LIMIT 1)
+);
+
+INSERT INTO Payments (student_id, type_id) 
+VALUES (
+    (SELECT student_id FROM Students WHERE name = 'Oliver' LIMIT 1),
+    (SELECT type_id FROM PaymentTypes WHERE name = 'MONTHLY' LIMIT 1)
+);
+
+INSERT INTO Payments (student_id, type_id) 
+VALUES (
+    (SELECT student_id FROM Students WHERE name = 'Henry' LIMIT 1),
+    (SELECT type_id FROM PaymentTypes WHERE name = 'WEEKLY' LIMIT 1)
+);
+
+INSERT INTO Payments (student_id, type_id) 
+VALUES (
+    (SELECT student_id FROM Students WHERE name = 'James' LIMIT 1),
+    (SELECT type_id FROM PaymentTypes WHERE name = 'DAILY' LIMIT 1)
+);
+
+5. INSERT INTO Mark (StudentName, Subject, Mark) VALUES('Chris', 'Art', 8);
+INSERT INTO Mark (StudentName, Subject, Mark) VALUES('Oliver', 'History', 5);
+INSERT INTO Mark (StudentName, Subject, Mark) VALUES('James', 'Geography', 9);
+INSERT INTO Mark (StudentName, Subject, Mark) VALUES('Jacob', 'Math', 4);
+INSERT INTO Mark (StudentName, Subject, Mark) VALUES('Logan', 'PE', 9);
+
