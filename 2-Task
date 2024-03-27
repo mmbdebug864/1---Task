@@ -65,3 +65,15 @@ INSERT INTO Mark (StudentName, Subject, Mark) VALUES('James', 'Geography', 9);
 INSERT INTO Mark (StudentName, Subject, Mark) VALUES('Jacob', 'Math', 4);
 INSERT INTO Mark (StudentName, Subject, Mark) VALUES('Logan', 'PE', 9);
 
+6. INSERT INTO Mark (id, student_id, subject_id, mark)
+VALUES (30, (SELECT id FROM Student WHERE name = 'Chris' LIMIT 1), (SELECT id FROM Subject WHERE name = 'Art'), 8);
+INSERT INTO Mark (id, student_id, subject_id, mark)
+VALUES (31, (SELECT id FROM Student WHERE name = 'Oliver' LIMIT 1), (SELECT id FROM Subject WHERE name = 'History'), 5);
+INSERT INTO Mark (id, student_id, subject_id, mark)
+VALUES (32, (SELECT id FROM Student WHERE name = 'James'), (SELECT id FROM Subject WHERE name = 'Geography'), 9);
+INSERT INTO Mark (id, student_id, subject_id, mark)
+VALUES (33, (SELECT id FROM Student WHERE name = 'Jacob'), (SELECT id FROM Subject WHERE name = 'Math'), 4);
+INSERT INTO Mark (id, student_id, subject_id, mark)
+VALUES (34, (SELECT id FROM Student WHERE name = 'Logan'), (SELECT id FROM Subject WHERE name = 'PE'), 9);
+
+
